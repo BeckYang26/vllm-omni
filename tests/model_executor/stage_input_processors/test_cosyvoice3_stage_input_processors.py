@@ -395,7 +395,7 @@ def test_talker2code2wav_async_chunk_uses_initial_codec_chunk_frames_for_first_e
 
 def test_talker2code2wav_async_chunk_honors_per_request_initial_codec_chunk_frames():
     transfer_manager = _transfer_manager(chunk_frames=4, pre_lookahead_frames=0)
-    entry = SimpleNamespace(list_data=[2])
+    entry = SimpleNamespace(tensor_data=None, list_data=[2], scalar_data=None)
     request = SimpleNamespace(
         external_req_id="rid-ic-req",
         output_token_ids=[1, 2, 3, 4],
